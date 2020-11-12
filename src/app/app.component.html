@@ -7,17 +7,14 @@
   <button (click)="reset()">Reset</button>
 </div>
 
-<div>
-<button mat-button>Basic</button>
-</div>
-
 <div *ngIf="gewonnen==true"> 
   <p>Proficiat! Je raadde het getal.</p>
   <button (click)="reset()">Reset</button>
 </div>
 
-<input type="number" [disabled]="aantalBeurten<=0" #inputVeld/>
-<button [disabled]="aantalBeurten<=0" (click)="valideerGok(inputVeld.value)">Gok</button>
+<input matInput type="number" min="1" max="99" [disabled]="aantalBeurten<=0" #inputVeld/>
+<button mat-button [disabled]="aantalBeurten<=0" (click)="valideerGok(inputVeld.value)" matBadge="{{ aantalBeurten }}" matBadgeColor="accent" matBadgePosition="after">Gok</button>
 
 <p>{{feedback}} {{feedback2}}</p>
 <p>{{feedback3}}</p>
+
