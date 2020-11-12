@@ -25,17 +25,17 @@ export class AppComponent {
     this.nummerTeller = this.nummerTeller + 1;
     this.feedback2 = "Nog " + this.aantalBeurten + " beurten resterend.";
     if (value < 1 || value > 100){
-      this.feedback = "Gelieve een getal tussen 1 en 100 in te geven. " + this.feedback2;
+      this.feedback = "Gelieve een getal tussen 1 en 100 in te geven. ";
     }
     else if (value == this.randomNumber) {
       this.feedback = null;
       this.gewonnen = true;
     } 
     else if (value < this.randomNumber) {
-      this.feedback = "Gok een hoger getal. " + this.feedback2;
+      this.feedback = "Gok een hoger getal. ";
     } 
     else {
-      this.feedback = "Gok een lager getal. " + this.feedback2;
+      this.feedback = "Gok een lager getal. ";
     }
     
     this.feedback3 = "Geraden nummers: " + this.gekozenNummers;
