@@ -46,7 +46,6 @@ export class AppComponent {
     this.nummerTeller = 0;
     this.feedback = null;
     this.feedback2 = null;
-    this.feedback3 = null;
     this.gewonnen = false;
   }
 }
