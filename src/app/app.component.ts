@@ -15,7 +15,6 @@ export class AppComponent {
 
   feedback: string = null;
   feedback2: string = null;
-  feedback3: string = null;
 
   gewonnen: boolean = false;
 
@@ -23,7 +22,6 @@ export class AppComponent {
     this.aantalBeurten = this.aantalBeurten - 1;
     this.gekozenNummers[this.nummerTeller] = value;
     this.nummerTeller = this.nummerTeller + 1;
-    this.feedback2 = "Nog " + this.aantalBeurten + " beurten resterend.";
     if (value < 1 || value > 100){
       this.feedback = "Gelieve een getal tussen 1 en 100 in te geven. ";
     }
@@ -38,7 +36,7 @@ export class AppComponent {
       this.feedback = "Gok een lager getal. ";
     }
     
-    this.feedback3 = "Geraden nummers: " + this.gekozenNummers;
+    this.feedback2 = "Reeds geraden nummers: " + this.gekozenNummers;
   }
 
   reset = () => {

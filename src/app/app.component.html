@@ -1,20 +1,21 @@
-<h1>Raad het getal</h1>
+<h1>Raad het getal <button mat-mini-fab (click)="reset()" mat-mini-fab color="warn"><mat-icon>home</mat-icon></button></h1>
 
-<p>Raad een getal tussen 1 en 100.</p>
+<p>Raad een getal tussen 1 en 100. <br> Je hebt 10 kansen.</p>
 
 <div *ngIf="aantalBeurten<=0"> 
-  <p>Je beurten zijn om.</p>
-  <button (click)="reset()">Reset</button>
+  <p>Je beurten zijn op. We zochten het getal {{randomNumber}}</p>
+  <button mat-button (click)="reset()">Speel nog eens!</button>
 </div>
 
 <div *ngIf="gewonnen==true"> 
   <p>Proficiat! Je raadde het getal.</p>
-  <button (click)="reset()">Reset</button>
+  <button mat-button (click)="reset()">Speel nog eens!</button>
 </div>
 
-<input matInput type="number" min="1" max="99" [disabled]="aantalBeurten<=0" #inputVeld/>
-<button mat-button [disabled]="aantalBeurten<=0" (click)="valideerGok(inputVeld.value)" matBadge="{{ aantalBeurten }}" matBadgeColor="accent" matBadgePosition="after">Gok</button>
+<p>Kies een getal: 
+  <input matInput type="number" min="1" max="99" [disabled]="aantalBeurten<=0" #inputVeld/>
+  <button [disabled]="aantalBeurten<=0" (click)="valideerGok(inputVeld.value)" mat-flat-button color="primary" matBadge="{{ aantalBeurten }}" matBadgePosition="after" matBadgeColor="warn">Gok</button>
+</p>
 
-<p>{{feedback}} {{feedback2}}</p>
-<p>{{feedback3}}</p>
-
+<p>{{feedback}}</p>
+<p>{{feedback2}}</p>
